@@ -1,16 +1,22 @@
 package org.example.domain;
 
+import org.example.domain.exception.EnvioException;
+
 public class EnvioAereo implements TipoEnvio{
 
     double peso;
 
     @Override
+    public String soporta() {
+        return "Aereo";
+    }
+
+    @Override
     public double calcularEnvio(double peso) {
         if (peso<=0){
-            System.out.println("peso invalido");
-        }else {
-            return peso*3;
+            throw new EnvioException("peso invalido");
         }
-        return 0;
+            return peso*3;
+
     }
 }

@@ -5,5 +5,7 @@ import org.example.domain.GestionEnvios;
 public interface IGestionEnvioGateway {
 
 
-    String registrarEnvio (GestionEnvios envio);
+    GestionEnvios registrarEnvio (GestionEnvios envio);
+
+    GestionEnvios actualizarEnvio (String nombreEnvio);
 }

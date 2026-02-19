@@ -10,12 +10,19 @@ public class EnviosRepository implements IGestionEnvioGateway {
     private IEnviosRepository repository;
 
     public EnviosRepository (IEnviosRepository repository){
-      this.repository= repository;
+      this.repository = repository;
     }
 
     @Override
-    public String registrarEnvio(GestionEnvios envio) {
-        repository.save(EnvioDBO.fromDomain(envio));
-        return "Guardado Exitoso";
+    public GestionEnvios registrarEnvio(GestionEnvios envio) {
+        return Mapper.toDomain(repository.save(EnvioDBO.fromDomain(envio)));
     }
+
+    public GestionEnvios actualizarEnvio(String nombreEnvio){
+        GestionEnvios gestionEnvios = Mapper.toDomain(repository.findByNombreEnvio(nombreEnvio));
+        gestionEnvios.setNombreEnvio(nombreEnvio);
+        return gestionEnvios;
+    }
+
+
 }

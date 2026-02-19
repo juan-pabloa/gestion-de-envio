@@ -1,14 +1,17 @@
 package org.example.aplication;
 
 import org.example.domain.GestionEnvios;
+import org.example.domain.Notificacion;
 
 public interface IGestionEnvioUseCase {
 
-    String registrarEnvio(GestionEnvios envio);
+    GestionEnvios registrarEnvio(GestionEnvios envio, String tipoNotificacion);
 
     double calcularEnvio(double peso, String tipoEnvio);
 
-    void notificarEnvio();
+    Notificacion notificarEnvio(String tipoNotificacion);
+
+    GestionEnvios actualizarEnvio(String nombreEnvio);
 
 
 }

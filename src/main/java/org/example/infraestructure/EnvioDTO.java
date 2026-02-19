@@ -18,13 +18,11 @@ public class EnvioDTO {
 
     private double peso;
 
+    private String tipoNotificacion;
+
+
     public GestionEnvios toDomain(){
         return new GestionEnvios(nombreEnvio, tipoEnvio, peso);
     }
-
-    public EnvioDBO fromDomain(EnvioDTO envio){
-        return new EnvioDBO(envio.getNombreEnvio());
-    }
-
 
 }

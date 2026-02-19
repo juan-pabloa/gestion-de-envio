@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IEnviosRepository extends JpaRepository <EnvioDBO,Integer> {
+
+    public EnvioDBO findByNombreEnvio (String nombreEnvio);
 }

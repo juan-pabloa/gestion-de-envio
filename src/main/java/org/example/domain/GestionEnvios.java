@@ -27,4 +27,5 @@ public class GestionEnvios {
     String estadoEnvio;
     String tipoEnvio;
     double peso;
+    Notificacion notificacion;
 }

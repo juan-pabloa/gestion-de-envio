@@ -1,6 +1,12 @@
 package org.example.domain;
 
-public interface Notificacion {
+import lombok.Data;
 
-    void notificar ();
+import java.time.LocalDateTime;
+
+@Data
+public class Notificacion {
+
+    String tipoNotificacion;
+    LocalDateTime fechaNotificacion;
 }
