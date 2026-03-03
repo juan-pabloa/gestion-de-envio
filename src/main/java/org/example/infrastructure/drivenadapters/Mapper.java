@@ -1,7 +1,7 @@
-package org.example.infraestructure.drivenadapters;
+package org.example.infrastructure.drivenadapters;
 
 import org.example.domain.GestionEnvios;
-import org.example.infraestructure.EnvioDBO;
+import org.example.infrastructure.EnvioDBO;
 
 public class Mapper {
 

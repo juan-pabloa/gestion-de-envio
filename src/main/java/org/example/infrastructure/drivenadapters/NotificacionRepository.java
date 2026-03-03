@@ -1,8 +1,8 @@
-package org.example.infraestructure.drivenadapters;
+package org.example.infrastructure.drivenadapters;
 
 import org.example.domain.Notificacion;
 import org.example.domain.gateway.IRegistrarNotificacionGateway;
-import org.example.infraestructure.NotificacionDBO;
+import org.example.infrastructure.NotificacionDBO;
 
 public class NotificacionRepository implements IRegistrarNotificacionGateway {
 

@@ -1,4 +1,4 @@
-package org.example.aplication;
+package org.example.application;
 
 import jakarta.transaction.Transactional;
 import org.example.domain.*;

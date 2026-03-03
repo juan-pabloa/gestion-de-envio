@@ -1,6 +1,6 @@
-package org.example.infraestructure.drivenadapters;
+package org.example.infrastructure.drivenadapters;
 
-import org.example.infraestructure.NotificacionDBO;
+import org.example.infrastructure.NotificacionDBO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

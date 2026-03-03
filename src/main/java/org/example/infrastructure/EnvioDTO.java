@@ -1,4 +1,4 @@
-package org.example.infraestructure;
+package org.example.infrastructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

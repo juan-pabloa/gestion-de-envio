@@ -1,13 +1,11 @@
-package org.example.infraestructure.drivenadapters;
+package org.example.infrastructure.drivenadapters;
 
-import jakarta.transaction.Transactional;
 import org.example.domain.GestionEnvios;
 import org.example.domain.exception.EnvioException;
 import org.example.domain.gateway.IGestionEnvioGateway;
-import org.example.infraestructure.EnvioDBO;
+import org.example.infrastructure.EnvioDBO;
 
 import java.util.List;
-import java.util.Optional;
 
 
 public class EnviosRepository implements IGestionEnvioGateway {

@@ -1,4 +1,4 @@
-package org.example.infraestructure;
+package org.example.infrastructure;
 
 import jakarta.persistence.*;
 import lombok.Data;

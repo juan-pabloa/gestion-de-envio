@@ -1,10 +1,9 @@
-package org.example.aplication;
+package org.example.application;
 
 import org.example.domain.GestionEnvios;
 import org.example.domain.Notificacion;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface IGestionEnvioUseCase {
 

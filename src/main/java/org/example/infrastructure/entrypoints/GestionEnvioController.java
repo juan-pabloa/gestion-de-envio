@@ -1,8 +1,8 @@
-package org.example.infraestructure.entrypoints;
+package org.example.infrastructure.entrypoints;
 
-import org.example.aplication.IGestionEnvioUseCase;
+import org.example.application.IGestionEnvioUseCase;
 import org.example.domain.GestionEnvios;
-import org.example.infraestructure.EnvioDTO;
+import org.example.infrastructure.EnvioDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

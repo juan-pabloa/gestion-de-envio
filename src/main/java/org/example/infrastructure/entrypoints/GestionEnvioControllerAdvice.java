@@ -1,4 +1,4 @@
-package org.example.infraestructure.entrypoints;
+package org.example.infrastructure.entrypoints;
 
 import org.example.domain.exception.EnvioException;
 import org.example.domain.exception.ResponseError;

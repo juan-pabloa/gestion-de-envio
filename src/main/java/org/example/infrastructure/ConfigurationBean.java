@@ -1,17 +1,17 @@
-package org.example.infraestructure;
+package org.example.infrastructure;
 
-import org.example.aplication.GestionEnvioUseCase;
-import org.example.aplication.IGestionEnvioUseCase;
+import org.example.application.GestionEnvioUseCase;
+import org.example.application.IGestionEnvioUseCase;
 import org.example.domain.EnvioAereo;
 import org.example.domain.EnvioMaritimo;
 import org.example.domain.EnvioTerrestre;
 import org.example.domain.TipoEnvio;
 import org.example.domain.gateway.IGestionEnvioGateway;
 import org.example.domain.gateway.IRegistrarNotificacionGateway;
-import org.example.infraestructure.drivenadapters.EnviosRepository;
-import org.example.infraestructure.drivenadapters.IEnviosRepository;
-import org.example.infraestructure.drivenadapters.INotificacionRepository;
-import org.example.infraestructure.drivenadapters.NotificacionRepository;
+import org.example.infrastructure.drivenadapters.EnviosRepository;
+import org.example.infrastructure.drivenadapters.IEnviosRepository;
+import org.example.infrastructure.drivenadapters.INotificacionRepository;
+import org.example.infrastructure.drivenadapters.NotificacionRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
