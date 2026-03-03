@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/envio")
 public class GestionEnvioController {
@@ -24,7 +26,7 @@ public class GestionEnvioController {
     }
 
     @GetMapping("/actualizar-envio/{nombreEnvio}")
-    ResponseEntity<GestionEnvios> actualizarEnvio (@PathVariable String nombreEnvio){
-        return new ResponseEntity<>(envio.actualizarEnvio(nombreEnvio),HttpStatus.CREATED);
+    ResponseEntity<List<GestionEnvios>> actualizarEnvio (@PathVariable String nombreEnvio, @RequestParam String nombreNuevo){
+        return new ResponseEntity<>(envio.actualizarEnvio(nombreEnvio, nombreNuevo),HttpStatus.CREATED);
     }
 }

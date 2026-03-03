@@ -1,5 +1,6 @@
 package org.example.aplication;
 
+import jakarta.transaction.Transactional;
 import org.example.domain.*;
 import org.example.domain.gateway.IGestionEnvioGateway;
 import org.example.domain.gateway.IRegistrarNotificacionGateway;
@@ -61,9 +62,10 @@ public class GestionEnvioUseCase implements IGestionEnvioUseCase {
            return notificacion;
         }
 
+    @Transactional
     @Override
-    public GestionEnvios actualizarEnvio(String nombreEnvio) {
-       return iGestionEnvioGateway.registrarEnvio(iGestionEnvioGateway.actualizarEnvio(nombreEnvio));
+    public List<GestionEnvios> actualizarEnvio(String nombreEnvio, String nombreNuevo) {
+       return iGestionEnvioGateway.actualizarEnvio(nombreEnvio, nombreNuevo);
     }
 
 }

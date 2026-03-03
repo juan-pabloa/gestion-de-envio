@@ -14,6 +14,7 @@ public class NotificacionRepository implements IRegistrarNotificacionGateway {
 
     @Override
     public void guardarNotificacion(Notificacion notificacion) {
+        System.out.println("va guardar notificacion " + notificacion.getTipoNotificacion()  + " " + notificacion.getFechaNotificacion());
      repository.save(NotificacionDBO.fromDomain(notificacion));
     }
 }

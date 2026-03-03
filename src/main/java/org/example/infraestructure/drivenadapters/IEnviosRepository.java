@@ -4,8 +4,10 @@ import org.example.infraestructure.EnvioDBO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface IEnviosRepository extends JpaRepository <EnvioDBO,Integer> {
 
-    public EnvioDBO findByNombreEnvio (String nombreEnvio);
+    public List<EnvioDBO> findByNombreEnvio (String nombreEnvio);
 }

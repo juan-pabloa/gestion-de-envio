@@ -1,8 +1,13 @@
 package org.example.infraestructure.drivenadapters;
 
+import jakarta.transaction.Transactional;
 import org.example.domain.GestionEnvios;
+import org.example.domain.exception.EnvioException;
 import org.example.domain.gateway.IGestionEnvioGateway;
 import org.example.infraestructure.EnvioDBO;
+
+import java.util.List;
+import java.util.Optional;
 
 
 public class EnviosRepository implements IGestionEnvioGateway {
@@ -18,10 +23,15 @@ public class EnviosRepository implements IGestionEnvioGateway {
         return Mapper.toDomain(repository.save(EnvioDBO.fromDomain(envio)));
     }
 
-    public GestionEnvios actualizarEnvio(String nombreEnvio){
-        GestionEnvios gestionEnvios = Mapper.toDomain(repository.findByNombreEnvio(nombreEnvio));
-        gestionEnvios.setNombreEnvio(nombreEnvio);
-        return gestionEnvios;
+
+    public List<GestionEnvios> actualizarEnvio(String nombreEnvio, String nombreNuevo){
+        List <EnvioDBO> gestionEnvios = repository.findByNombreEnvio(nombreEnvio);
+        if(gestionEnvios.isEmpty()) {
+            throw new EnvioException("Nombre de Envio No Encontrado");
+        }
+        gestionEnvios.stream().forEach(e -> e.setNombreEnvio(nombreNuevo));
+
+        return gestionEnvios.stream().map(Mapper::toDomain).toList();
     }
 
 

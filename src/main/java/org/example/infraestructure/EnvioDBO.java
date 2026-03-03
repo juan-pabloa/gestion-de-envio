@@ -3,7 +3,6 @@ package org.example.infraestructure;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.example.domain.GestionEnvios;
-import org.example.domain.Notificacion;
 
 @Entity
 @Table(name="Envios")
@@ -12,13 +11,13 @@ public class EnvioDBO {
 
     public EnvioDBO() {}
 
-    public EnvioDBO(String nombreEnvio, double valorEnvio, String estadoEnvio, String tipoEnvio, double peso){
+    public EnvioDBO(String nombreEnvio, double valorEnvio, String estadoEnvio, String tipoEnvio, double peso, NotificacionDBO notificacion){
     this.nombreEnvio = nombreEnvio;
     this.valorEnvio = valorEnvio;
     this.estadoEnvio = estadoEnvio;
     this.tipoEnvio = tipoEnvio;
     this.peso = peso;
-    this.notificacion = new NotificacionDBO(notificacion.getTipoNotificacion(),notificacion.getFechaNotificacion());
+    this.notificacion = notificacion;
     }
 
     @Id
@@ -40,7 +39,8 @@ public class EnvioDBO {
     private NotificacionDBO notificacion;
 
     public static EnvioDBO fromDomain(GestionEnvios envio){
-        return new EnvioDBO(envio.getNombreEnvio(),envio.getValorEnvio(),envio.getEstadoEnvio(), envio.getTipoEnvio(),envio.getPeso());
+        NotificacionDBO notificacion = new NotificacionDBO(envio.getNotificacion().getTipoNotificacion(), envio.getNotificacion().getFechaNotificacion());
+        return new EnvioDBO(envio.getNombreEnvio(),envio.getValorEnvio(),envio.getEstadoEnvio(), envio.getTipoEnvio(),envio.getPeso(), notificacion);
     }
 
 
