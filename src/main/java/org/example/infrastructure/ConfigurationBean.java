@@ -2,6 +2,8 @@ package org.example.infrastructure;
 
 import org.example.application.GestionEnvioUseCase;
 import org.example.application.IGestionEnvioUseCase;
+import org.example.application.IObtenerConstanteUseCase;
+import org.example.application.ObtenerConstanteUseCase;
 import org.example.domain.EnvioAereo;
 import org.example.domain.EnvioMaritimo;
 import org.example.domain.EnvioTerrestre;
@@ -50,4 +52,8 @@ public class ConfigurationBean {
         return new NotificacionRepository(repository);
     }
 
+    @Bean
+    public IObtenerConstanteUseCase iObtenerConstanteUseCase(){
+        return new ObtenerConstanteUseCase();
+    }
 }
